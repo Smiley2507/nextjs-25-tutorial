@@ -3,6 +3,8 @@ import { prisma } from "./utils/db";
 import { Suspense } from "react";
 // import { BlogPost } from '@prisma/client';
 
+export const revalidate = 60;
+
 async function fetchPosts() {
   // await new Promise((resolve) => setTimeout(resolve, 3000)); // Simulate network delay
   const data =  await prisma.blogPost.findMany({
